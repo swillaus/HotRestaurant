@@ -19,18 +19,47 @@
         <div class="jumbotron">
             <h1 class="display-4">Hot Restaurant</h1>
             <p class="lead">Current Reservations and Waiting List</p>
-            <a class="btn btn-danger btn-lg" href="reservations.html" role="button">Make Reservation</a>
-            <a class="btn btn-light btn-lg" href="index.html" role="button"></a>
+            <a class="btn btn-danger btn-lg" href="/reservations" role="button">Make Reservation</a>
+            <a class="btn btn-light btn-lg" href="/" role="button"></a>
         </div>
 
-
+        <div class="card">
+            <div class="card-header">
+                Current Reservations
+            </div>
+            <div class="card-body">
+                <div class="card">
+                    <div class="card-body">
+                        This is some text within a card body.
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 
 
-    <script src="server.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.js"
-        integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+ 
 </body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+
+    
+var runTableQuery = function () {
+        $.ajax({
+            url: "/api/tables",
+            method: "GET"
+        }).then(function( res ) {
+            console.log(res)
+        }) 
+    }
+
+    runTableQuery();    
+    
+    
+    </script>
 
 </html>

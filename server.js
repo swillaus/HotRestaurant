@@ -69,10 +69,17 @@ app.post("/api/make-reservation", function (req, res) {
 
     res.json(newReservation);
 
-    if ( tables.length < 6 ) {
+    if (tables.length < 6) {
         tables.push(newReservation)
+    } else {
+        waitlist.push(newReservation)
     }
 });
+
+
+
+
+
 
 
 // Starts the server to begin listening
